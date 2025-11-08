@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "links-client",
+  "main": "worker/index.ts",
+  "compatibility_date": "2025-06-17",
+  "assets": {
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+  },
+  "observability": {
+    "enabled": true,
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_id": "a56f9fcd-7a6e-4d75-a97b-6a4502a9f2be",
+      "remote": true,
+    },
+  ],
+}

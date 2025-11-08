@@ -1,0 +1,60 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "links-data-service",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-06-17",
+	"compatibility_flags": ["nodejs_compat"],
+	"observability": {
+		"enabled": true,
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_id": "a56f9fcd-7a6e-4d75-a97b-6a4502a9f2be",
+			"remote": true,
+		},
+	],
+	"kv_namespaces": [
+		{
+			"binding": "CACHE",
+			"id": "61e6229cc30b47deafbc1dc11b63694a",
+			"remote": true,
+		},
+	],
+	"queues": {
+		"consumers": [
+			{
+				"queue": "smart-links-data-queue-stage",
+				"dead_letter_queue": "smart-links-data-dead-letter-queue-stage",
+			},
+			{
+				"queue": "smart-links-data-dead-letter-queue-stage",
+			},
+		],
+		"producers": [
+			{
+				"binding": "QUEUE",
+				"queue": "smart-links-data-queue-stage",
+			},
+		],
+	},
+	"workflows": [
+		{
+			"binding": "DESTINATION_EVALUATION_WORKFLOW",
+			"name": "destination-evaluation-workflow",
+			"class_name": "DestinationEvaluationWorkflow",
+		},
+	],
+	"browser": {
+		"binding": "VIRTUAL_BROWSER",
+	},
+	"ai": {
+		"binding": "AI",
+	},
+	"r2_buckets": [
+		{
+			"binding": "EVAL_BUCKET",
+			"bucket_name": "smart-links-eval-stage",
+		},
+	],
+}
