@@ -9,6 +9,12 @@
 	},
 	"env": {
 		"stage": {
+			"routes": [
+				{
+					"zone_name": "yogan.dev",
+					"pattern": "stage.links.yogan.dev/r/*",
+				},
+			],
 			"d1_databases": [
 				{
 					"binding": "DB",
@@ -83,6 +89,12 @@
 			],
 		},
 		"production": {
+			"routes": [
+				{
+					"zone_name": "yogan.dev",
+					"pattern": "links.yogan.dev/r/*",
+				},
+			],
 			"d1_databases": [
 				{
 					"binding": "DB",
