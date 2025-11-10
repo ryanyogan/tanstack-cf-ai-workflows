@@ -17,4 +17,11 @@
       "remote": true,
     },
   ],
+  "services": [
+    {
+      "binding": "BACKEND_SERVICE",
+      "service": "links-data-service",
+      "remote": true,
+    },
+  ],
 }
