@@ -14,7 +14,7 @@ export function useClickSocket() {
 
   useEffect(() => {
     const connect = () => {
-      const protocol = window.location.protocol === "https" ? "wss:" : "ws:";
+      const protocol = import.meta.env.PROD ? "wss:" : "ws:";
       const socket = new WebSocket(
         `${protocol}//${import.meta.env.VITE_BASE_HOST}/click-socket`,
       );
