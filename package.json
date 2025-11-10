@@ -7,7 +7,9 @@
     "dev:ui": "pnpm --filter user-application run dev",
     "dev:data-service": "pnpm --filter data-service run dev",
     "stage:deploy-frontend": "pnpm run build:package && pnpm --filter user-application stage:deploy",
-    "production:deploy-frontend": "pnpm run build:package && pnpm --filter user-application production:deploy"
+    "stage:deploy-backend": "pnpm run build:package && pnpm --filter data-service stage:deploy",
+    "production:deploy-frontend": "pnpm run build:package && pnpm --filter user-application production:deploy",
+    "production:deploy-backend": "pnpm run build:package && pnpm --filter data-service production:deploy"
   },
   "keywords": [],
   "author": "",
