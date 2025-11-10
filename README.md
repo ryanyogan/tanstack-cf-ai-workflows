@@ -1,6 +1,3 @@
 # cf-services-the-course-playground
 
-more
-change
-buimp
-
+This is a trigger
