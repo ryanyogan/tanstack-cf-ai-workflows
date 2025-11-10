@@ -25,7 +25,6 @@ export function useClickSocket() {
       };
 
       socket.onmessage = (event) => {
-        console.log(event);
         const data = durableObjectGeoClickArraySchema.parse(
           JSON.parse(event.data),
         );

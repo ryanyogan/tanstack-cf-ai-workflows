@@ -12,6 +12,12 @@
   },
   "env": {
     "stage": {
+      "routes": [
+        {
+          "custom_domain": true,
+          "pattern": "stage.links.yogan.dev",
+        },
+      ],
       "d1_databases": [
         {
           "binding": "DB",
@@ -28,6 +34,12 @@
       ],
     },
     "production": {
+      "routes": [
+        {
+          "custom_domain": true,
+          "pattern": "links.yogan.dev",
+        },
+      ],
       "d1_databases": [
         {
           "binding": "DB",
