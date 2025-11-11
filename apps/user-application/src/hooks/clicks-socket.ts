@@ -31,8 +31,8 @@ export function useClickSocket() {
         addClicks(data);
       };
 
-      socket.onerror = () => {
-        console.log("Socket Error");
+      socket.onerror = (error) => {
+        console.log("Socket Error", error);
       };
 
       socket.onclose = () => {
