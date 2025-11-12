@@ -6,6 +6,7 @@ import {
   session,
   account,
   verification,
+  subscription,
 } from "@/drizzle-out/auth-schema";
 
 import Stripe from "stripe";
@@ -73,6 +74,7 @@ export function getAuth(
         session,
         account,
         verification,
+        subscription,
       },
     }),
     stripeConfig,

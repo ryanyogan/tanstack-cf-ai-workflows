@@ -3,6 +3,7 @@
   "name": "links-client",
   "main": "worker/index.ts",
   "compatibility_date": "2025-06-17",
+  "compatibility_flags": ["nodejs_compat"],
   "assets": {
     "binding": "ASSETS",
     "not_found_handling": "single-page-application",
@@ -13,6 +14,11 @@
   },
   "env": {
     "stage": {
+      "vars": {
+        "STRIPE_PRODUCT_BASIC": "price_1SSP9HFj3xQUckah6eReMwv1",
+        "STRIPE_PRODUCT_PRO": "price_1SSPAeFj3xQUckahm1OBcClk",
+        "STRIPE_PRODUCT_ENTERPRISE": "price_1SSPBWFj3xQUckahYgyRlUJO",
+      },
       "routes": [
         {
           "custom_domain": true,
