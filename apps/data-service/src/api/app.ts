@@ -21,8 +21,12 @@ App.get('/click-socket', async (c) => {
 	return await stub.fetch(c.req.raw);
 });
 
-App.get('/r/:id', async (c) => {
+App.get('/:id', async (c) => {
 	const id = c.req.param('id');
+	if (!id) {
+		return c.text('No ID', 404);
+	}
+
 	const linkInformation = await getRoutingDestinations(c.env, id);
 
 	if (!linkInformation) {
